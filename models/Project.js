@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 
 const ProjectSchema = new mongoose.Schema({
     title: String,
-    description: String,
-    desktopUrl: String,
+    url: String,
+    desktopImageUrl: String,
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
@@ -14,7 +14,8 @@ ProjectSchema.methods.toJSON = function ()  {
     return {
         id: this.id,
         title: this.title,
-        desktopUrl: this.desktopUrl,
+        url: this.url,
+        desktopImageUrl: this.desktopImageUrl,
         createdAt: this.createdAt,
         updatedAt: this.updatedAt
         // author: this.author.toJSON()

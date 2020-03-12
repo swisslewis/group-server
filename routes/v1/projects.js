@@ -34,9 +34,17 @@ router.post('/', async function (req, res, next) {
     return res.json({ project: project.toJSON() })
 })
 
-
 //---------- END ----------//
 
+/********** DELETE A PROJECT **********/
+
+router.delete('/:project', async function (req, res, next) {
+    console.log('***** Project Deleted *****');
+    await Project.findByIdAndRemove(req.project.id)
+    return res.sendStatus(204)
+})
+
+//---------- END ----------//
 
 
 
