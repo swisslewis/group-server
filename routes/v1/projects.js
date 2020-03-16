@@ -46,6 +46,15 @@ router.delete('/:project', async function (req, res, next) {
 
 //---------- END ----------//
 
+/********** GET PROJECT **********/
+
+router.get('/:project', async function (req, res, next) {
+    console.log('get project');
+    return res.json({ project: req.project.toJSON( )})
+})
+
+//---------- END ----------//
+
 
 
 
